@@ -31,3 +31,4 @@ end
 
 gem 'mongoid', '~> 4', github: 'mongoid/mongoid'
 gem 'bson_ext'
+gem 'pry-rails', :group => :development
