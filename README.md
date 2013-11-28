@@ -13,3 +13,6 @@ details
   - Sabado font family :
     - Author : Frank Hemmekam
     - Link : http://www.behance.net/gallery/Sabado-(Free-typefamily)/10550379
+  - Roboto Slab font family
+    - Author : Christian Robertson
+    - Link : http://www.fontsquirrel.com/fonts/roboto-slab
