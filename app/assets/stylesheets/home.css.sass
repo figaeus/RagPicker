@@ -1,14 +1,52 @@
+@import 'reset'
+
 h1
   font-family: roboto_slabregular
   font-weight: 100
   font-size: 40px
   text-transform: uppercase
-  color: #2D2B2C
-  padding-bottom: 10px
-  border-bottom: 1px solid gray
+  color: white
+  padding-bottom: 20px
 
 h2
   font-size: 20px
+  line-height: 30px
   color: silver
   font-family: roboto_slabregular
   font-weight: 100
+
+body
+  background: url('/assets/blue_noise.png')
+  color: white
+
+body, html
+  width: 100%
+  height: 100%
+  overflow: hidden
+
+#banner
+  position: absolute
+  bottom: 0
+  left: 0
+  right: 0
+  padding-bottom: 30px
+  padding-left: 30px
+  border-bottom: 3px solid white
+
+header
+  background: rgba(255, 255, 255, 0.2)
+  height: 40px
+  box-shadow: inset 0 0 2px 2px rgba(0,0,0,0.2)
+  ul
+    float: right
+    li
+      padding: 5px
+      float: left
+      padding: 10px
+      a
+        text-decoration: none
+        color: white
+        text-transform: uppercase
+        font-family: roboto_slabregular
+      a:hover
+        border-bottom: 2px solid white
