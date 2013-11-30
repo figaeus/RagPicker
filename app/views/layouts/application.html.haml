@@ -7,6 +7,11 @@
       :name => "viewport",                               |
       :content => "width=device-width, initial-scale=1"  |
     }                                                    |
+    - unless @current_user_email.nil?
+      %meta{                                             |
+        :name => "current_user",                         |
+        :content => @current_user_email                  |
+      }                                                  |
     = csrf_meta_tags
 
     %title Rag Picker

@@ -111,6 +111,8 @@ GEM
     rake (10.1.0)
     rdoc (3.12.2)
       json (~> 1.4)
+    rest-client (1.6.7)
+      mime-types (>= 1.16)
     rspec-collection_matchers (0.0.2)
       rspec-expectations (>= 2.99.0.beta1)
     rspec-core (3.0.0.beta1)
@@ -174,6 +176,7 @@ DEPENDENCIES
   mongoid (~> 4)!
   pry-rails
   rails (= 4.0.1)
+  rest-client
   rspec-rails (~> 3.0.0.beta)
   sass-rails (~> 4.0.0)
   sdoc

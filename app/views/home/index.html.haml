@@ -9,8 +9,14 @@
         %a{:href => '#'} Support
       %li
         %a{:href => '#'} Acknowledgements
-  %a#signin
-    %img{:src => "/assets/persona_sign_in_blue.png", :alt => "Sign In"}
+  - if @current_user_email.nil?
+    %a#signin
+      %img{:src => "/assets/persona_sign_in_blue.png", :alt => "Sign In"}
+  - else
+    %a#account
+      %img{:src => profile_image_url(@current_user_email)}
+    %a#signout
+      %img{:src => "/assets/logout.png", :alt => "Sign Out"}
 #notice
   Please enable javascript to utilize this site to its fullest potential.
 #banner

@@ -1,0 +1,13 @@
+defaults: &defaults
+  audience: http://localhost:3000
+  server: 'https://verifier.login.persona.org/verify'
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  # TODO:deploy change audience
+  <<: *defaults

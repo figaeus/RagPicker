@@ -1,3 +1,4 @@
+#= require utils/ajax
 #= require persona
 
 window.ui =
@@ -6,7 +7,7 @@ window.ui =
     @noticeEl
       .removeClass()
       .html(msg)
-      .addClass(cls)
+      .addClass(cls || '')
       .fadeIn()
     clearTimeout @noticeTimer if @noticeTimer
     @noticeTimer = setTimeout (=>
@@ -15,9 +16,14 @@ window.ui =
 
   _cacheDomReferences: ->
     @noticeEl = $ '#notice'
+    @noticeEl.hide()
+
+  _setupPersona: ->
+    @personaClient = new PersonaClient
+    @personaClient.setup()
 
   setup: ->
     @_cacheDomReferences()
-    @noticeEl.hide()
+    @_setupPersona()
 
 ui.setup()
