@@ -163,6 +163,9 @@ GEM
       kgio (~> 2.6)
       rack
       raindrops (~> 0.7)
+    unicorn-rails (1.1.0)
+      rack
+      unicorn
 
 PLATFORMS
   ruby
@@ -181,4 +184,4 @@ DEPENDENCIES
   sass-rails (~> 4.0.0)
   sdoc
   uglifier (>= 1.3.0)
-  unicorn
+  unicorn-rails
