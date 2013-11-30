@@ -1,6 +1,7 @@
 RagPicker::Application.routes.draw do
 
   root 'home#index'
+  get 'dashboard' => 'dashboard#index'
   post 'sessions' => 'sessions#create'
   delete 'sessions' => 'sessions#destroy'
 
