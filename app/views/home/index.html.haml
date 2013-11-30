@@ -1,22 +1,26 @@
 %header
   %nav
     %ul
+      - if logged_in?
+        %li
+          %a{:href => '/dashboard'} Dashboard
       %li
-        %a{:href => '#'} Home
+        %a{:href => '/'} Home
       %li
         %a{:href => '#'} Community
       %li
         %a{:href => '#'} Support
       %li
         %a{:href => '#'} Acknowledgements
-  - if @current_user_email.nil?
-    %a#signin
-      %img{:src => "/assets/persona_sign_in_blue.png", :alt => "Sign In"}
-  - else
+  - if logged_in?
     %a#account
-      %img{:src => profile_image_url(@current_user_email)}
+      %img{:src => profile_image_url(current_user.email)}
     %a#signout
       %img{:src => "/assets/logout.png", :alt => "Sign Out"}
+  - else
+    %a#signin
+      %img{:src => "/assets/persona_sign_in_blue.png", :alt => "Sign In"}
+
 #notice
   Please enable javascript to utilize this site to its fullest potential.
 #banner

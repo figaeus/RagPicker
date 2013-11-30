@@ -7,10 +7,10 @@
       :name => "viewport",                               |
       :content => "width=device-width, initial-scale=1"  |
     }                                                    |
-    - unless @current_user_email.nil?
+    - unless logged_in?
       %meta{                                             |
         :name => "current_user",                         |
-        :content => @current_user_email                  |
+        :content => current_user.email                   |
       }                                                  |
     = csrf_meta_tags
 

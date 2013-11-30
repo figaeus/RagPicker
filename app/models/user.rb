@@ -7,6 +7,10 @@ class User
 
   field :email, type: String
 
+  def self.find_by_email(email)
+    User.where(email: email).first
+  end
+
   def self.authenticate(assertion)
     assertion_params = {
       assertion: assertion,
@@ -19,7 +23,7 @@ class User
     response = JSON.parse(request)
 
     if response['status'] == 'okay'
-      u = User.where(email: response['email']).first
+      u = User.find_by_email response['email']
       if u.nil?
         puts 'Creating user'
         u = User.create email: response['email']
