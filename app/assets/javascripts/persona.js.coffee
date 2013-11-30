@@ -1,12 +1,27 @@
+id = navigator.id
+
 $('#signin').click ->
-  navigator.id.request()
+  ui.notify 'Attempting to log you in'
+  id.request()
 $('#signout').click ->
-  navigator.id.logout()
+  id.logout()
 
 navigator.id.watch
   loggedInUser: null,
   onlogin: (assertion)->
-    alert assertion
+    $.ajax
+      type: 'POST'
+      url: '/sessions'
+      data:
+        assertion: assertion
+      error: (xhr, status,err)->
+        id.logout()
+        ui.notify 'Login failed'
   onlogout: (assertion)->
-    alert assertion
-
+    $.ajax
+      type: 'DELETE'
+      url: '/sessions'
+      success: (res, status, xhr)->
+        window.location.reload()
+      error: (xhr, status, err)->
+        ui.notify 'Failed to Log you out'
