@@ -1,12 +1,33 @@
 !!!
 %html
   %head
+    %meta{:charset => "utf-8"}
+    %meta{"http-equiv" => "X-UA-Compatible", :content => "IE-Edge"}
+    %meta{                                               |
+      :name => "viewport",                               |
+      :content => "width=device-width, initial-scale=1"  |
+    }                                                    |
+    = csrf_meta_tags
+
     %title Rag Picker
+
+    / Stylesheets -----------------------------------
     - %w[bold regular light thin].each do |variant|
       = stylesheet_link_tag "roboto_slab#{variant}/stylesheet.css", media: "all"
     = stylesheet_link_tag "application", media: "all"
     = stylesheet_link_tag controller.controller_name, media: "all"
-    = javascript_include_tag "application"
-    = csrf_meta_tags
   %body
+    /[if lt IE9]
+      .browsehappy
+        You are using a ridiculously outdated browser that has
+        endowed pain and suffering upon users and developers alike for ages.
+        %br
+        Please save yourself from embarrassment and
+        %a{:href => "http://browsehappy.com"} Upgrade your browser
     = yield
+    - if Rails.env.production?
+      javascript_include_tag "//code.jquery.com/jquery-2.0.3.min.js"
+    - else
+    = javascript_include_tag "jquery-2.0.3.js"
+    = javascript_include_tag "https://login.persona.org/include.js"
+    = javascript_include_tag controller.controller_name
