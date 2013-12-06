@@ -7,7 +7,7 @@
       :name => "viewport",                               |
       :content => "width=device-width, initial-scale=1"  |
     }                                                    |
-    - unless logged_in?
+    - if logged_in?
       %meta{                                             |
         :name => "current_user",                         |
         :content => current_user.email                   |
