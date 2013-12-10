@@ -45,3 +45,4 @@ end
 
 gem 'haml-rails'
 gem 'rest-client'
+gem 'fabrication'
