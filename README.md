@@ -16,3 +16,5 @@ details
   - Roboto Slab font family
     - Author : Christian Robertson
     - Link : http://www.fontsquirrel.com/fonts/roboto-slab
+
+[![Dependency Status](https://gemnasium.com/figaeus/RagPicker.png)](https://gemnasium.com/figaeus/RagPicker)
