@@ -184,6 +184,7 @@ DEPENDENCIES
   pry-rails
   rails (= 4.0.1)
   rest-client
+  rspec-mocks
   rspec-rails (~> 3.0.0.beta)
   sass-rails (~> 4.0.0)
   sdoc

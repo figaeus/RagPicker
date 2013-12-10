@@ -1,7 +1,6 @@
 require 'spec_helper'
 
 describe User do
-  pending "add some examples to (or delete) #{__FILE__}"
 
   it "fails validations when email is empty" do
     u = User.new
@@ -9,10 +8,8 @@ describe User do
   end
 
   it "fails validation when email is not unique" do
-    u = Fabricate :user
-    u.save
-    u = Fabricate :user
-    expect(u.valid?).to be false
+    Fabricate :user
+    expect { Fabricate :user }.to raise_error Mongoid::Errors::Validations
   end
 
 end

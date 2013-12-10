@@ -41,10 +41,10 @@ gem 'pry-rails', :group => :development
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0.beta'
+  gem 'rspec-mocks'
 end
 
 gem 'haml-rails'
 gem 'rest-client'
 gem 'fabrication'
 gem 'database_cleaner'
-
