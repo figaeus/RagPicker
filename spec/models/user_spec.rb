@@ -25,4 +25,18 @@ describe User do
     end.to raise_error Mongoid::Errors::Validations, /Email is already taken/
   end
 
+  it "should have many created_bookmarks" do
+    r = User.reflect_on_association(:created_bookmarks)
+    expect(r[:relation]).to be Mongoid::Relations::Referenced::Many
+    expect(r[:class_name]).to eq "Bookmark"
+    expect(r[:inverse_of]).to be :creator
+  end
+
+  it "should have many created_annotations" do
+    r = User.reflect_on_association(:created_annotations)
+    expect(r[:relation]).to be Mongoid::Relations::Referenced::Many
+    expect(r[:class_name]).to eq "Annotation"
+    expect(r[:inverse_of]).to be :creator
+  end
+
 end
