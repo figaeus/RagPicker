@@ -12,7 +12,7 @@ class User
   validates_presence_of :email
   validates_uniqueness_of :email
   validates_format_of :email,
-    with: /\A[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})\z/
+    with: /\A[_a-z0-9\-\+]+(\.[_a-z0-9\-]+)*@[a-z0-9\-]+(\.[a-z0-9]+)*(\.[a-z]{2,})\z/i
 
   def self.find_by_email(email)
     User.where(email: email).first
