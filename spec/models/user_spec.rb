@@ -45,6 +45,10 @@ describe User do
       WebMock.disable_net_connect!(:allow_localhost => true)
     end
 
+    after :each do
+      WebMock.allow_net_connect!
+    end
+
     it "should send a post request to Mozilla Persona authentication server" do
       stub = stub_request(:post, PERSONA_CONFIG['server'])
         .to_return(:body => {status: 'okay'}.to_json)

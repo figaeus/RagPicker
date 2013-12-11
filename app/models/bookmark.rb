@@ -6,4 +6,5 @@ class Bookmark
 
   field :url, type: String
   field :visits, type: Integer
+
 end
