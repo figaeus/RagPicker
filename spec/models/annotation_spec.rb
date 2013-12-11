@@ -9,4 +9,12 @@ describe Annotation do
     expect(r[:inverse_of]).to be :created_annotations
   end
 
+  it "should have field kind of type String" do
+    expect(Annotation.fields['kind'].options[:type]).to be String
+  end
+
+  it "should have field content of type String" do
+    expect(Annotation.fields['content'].options[:type]).to be String
+  end
+
 end

@@ -9,5 +9,15 @@ describe Bookmark do
     expect(r[:inverse_of]).to be :created_bookmarks
   end
 
-  
+  it "should have field url of type String" do
+    field = Bookmark.fields['url']
+    expect(field).to be_truthy
+    expect(field.options[:type]).to be String
+  end
+
+  it "should have field visits of type Integer" do
+    field = Bookmark.fields['visits']
+    expect(field).to be_truthy
+    expect(field.options[:type]).to be Integer
+  end
 end
