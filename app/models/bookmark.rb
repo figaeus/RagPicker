@@ -5,6 +5,6 @@ class Bookmark
   has_many :annotations
 
   field :url, type: String
-  field :visits, type: Integer
+  field :visits, type: Integer, default: 0
 
 end
