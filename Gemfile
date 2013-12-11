@@ -42,6 +42,7 @@ gem 'pry-rails', :group => :development
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0.beta'
   gem 'rspec-mocks'
+  gem 'webmock'
 end
 
 gem 'haml-rails'

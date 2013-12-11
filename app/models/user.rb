@@ -32,7 +32,6 @@ class User
     if response['status'] == 'okay'
       u = User.find_by_email response['email']
       if u.nil?
-        puts 'Creating user'
         u = User.create email: response['email']
       end
       return u
