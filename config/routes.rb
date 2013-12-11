@@ -5,6 +5,15 @@ RagPicker::Application.routes.draw do
   post 'sessions' => 'sessions#create'
   delete 'sessions' => 'sessions#destroy'
 
+  resources :users, shallow: true do
+    resources :bookmarks
+    resources :annotations
+  end
+
+  resources :bookmarks, shallow: true do
+    resources :annotations
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
