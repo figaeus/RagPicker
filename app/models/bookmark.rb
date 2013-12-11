@@ -7,4 +7,6 @@ class Bookmark
 
   field :url, type: String
   field :visits, type: Integer, default: 0
+
+  validates_presence_of :url, :visits
 end
