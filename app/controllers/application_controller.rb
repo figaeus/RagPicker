@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   helper_method :logged_in?, :current_user
+  rescue_from ActionController::ParameterMissing, with: :notify_missing_params
 
   private
 
@@ -29,4 +30,11 @@ class ApplicationController < ActionController::Base
   def fail_unless_logged_in
     head :user_not_authorized unless logged_in? 
   end
+
+  def notify_missing_params
+    render json: {
+      error: 'Request payload does not match expected schema'
+    }, status: :not_acceptable
+  end
+
 end

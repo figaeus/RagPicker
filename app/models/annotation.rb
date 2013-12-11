@@ -7,4 +7,9 @@ class Annotation
   field :kind, type: String
   field :content, type: String
 
+  embeds_many :collaborators, as: :target
+
+  validates_presence_of :content, :bookmark, :creator, :kind, :content
+  validates_inclusion_of :kind, in: ['floating', 'margin', 'reply', 'highlight']
+
 end
