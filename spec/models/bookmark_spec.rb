@@ -20,4 +20,5 @@ describe Bookmark do
     expect(field).to be_truthy
     expect(field.options[:type]).to be Integer
   end
+
 end
