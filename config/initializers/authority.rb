@@ -43,6 +43,7 @@ Authority.configure do |config|
     :read   => 'readable',
     :update => 'updatable',
     :delete => 'deletable',
+    :administer => 'administerable',
     :share  => 'sharable',
     :annotate => 'annotable',
     :reply  => 'repliable'

@@ -2,7 +2,6 @@ class Annotation
 
   include Mongoid::Document
   include Deactivable
-  include Sharable
 
   belongs_to :bookmark
   belongs_to :creator, class_name: "User", inverse_of: :created_annotations
