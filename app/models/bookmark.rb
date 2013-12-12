@@ -16,6 +16,6 @@ class Bookmark
   validates_presence_of :url, :visits
 
   def share_with_creator
-    collaborators << Collaborator.create! user: creator, is_admin: true
+    collaborators << Collaborator.create!(user: creator, is_admin: true)
   end
 end

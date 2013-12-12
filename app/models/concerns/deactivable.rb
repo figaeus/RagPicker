@@ -1,11 +1,12 @@
 module Deactivable
+  extend ActiveSupport::Concern
 
-  included do
+  included do |m|
     field :is_active, type: Boolean, default: true
     field :inactive_reason, type: String
 
-    scope :active, -> where is_active: false
-    scope :inactive_due_to, ->(r) where is_active: false, inactive_reason: r
+    scope :active, -> { where is_active: false }
+    scope :inactive_due_to, ->(r) { where is_active: false, inactive_reason: r }
   end
 
 end
