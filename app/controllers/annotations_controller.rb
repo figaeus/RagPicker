@@ -5,7 +5,7 @@ class AnnotationsController < ApplicationController
   before_filter :load_annotation, only: [:show, :destroy, :update]
 
   def create
-    
+    respond_with 
   end
 
   def load_annotation

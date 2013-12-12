@@ -1,6 +1,10 @@
 # Other authorizers should subclass this one
 class ApplicationAuthorizer < Authority::Authorizer
 
+  def is_creator?(user)
+    resource.creator_id == user._id
+  end
+
   # Any class method from Authority::Authorizer that isn't overridden
   # will call its authorizer's default method.
   #

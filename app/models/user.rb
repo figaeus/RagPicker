@@ -5,15 +5,15 @@ class User
 
   include Mongoid::Document
   include Authority::UserAbilities
+  include Deactivable
 
   field :email, type: String
   field :name, type: String
-  field :is_active, type: Boolean, default: true
 
   has_many :created_bookmarks, class_name: "Bookmark", inverse_of: :creator
   has_many :created_annotations, class_name: "Annotation", inverse_of: :creator
 
-  validates_presence_of :email
+  validates_presence_of :email, :is_active
   validates_uniqueness_of :email
   validates_format_of :email,
     with: /\A[_a-z0-9\-\+]+(\.[_a-z0-9\-]+)*@[a-z0-9\-]+(\.[a-z0-9]+)*(\.[a-z]{2,})\z/i

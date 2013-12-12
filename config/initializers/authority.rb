@@ -43,7 +43,9 @@ Authority.configure do |config|
     :read   => 'readable',
     :update => 'updatable',
     :delete => 'deletable',
-    :share  => 'sharable'
+    :share  => 'sharable',
+    :annotate => 'annotable',
+    :reply  => 'repliable'
   }
 
   # LOGGER
