@@ -27,7 +27,7 @@ gem 'unicorn-rails'
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
 
-gem 'mongoid', '~> 4', github: 'mongoid/mongoid'
+gem 'mongoid', github: 'mongoid/mongoid'
 gem 'bson_ext'
 
 group :development do
@@ -37,12 +37,12 @@ end
 group :development, :test do
   gem 'debugger'
   gem 'fabrication'
-  gem 'rspec-rails', '~> 3.0.0.beta'
+  gem 'rspec-rails', '~> 2.14.0'
 end
 
 group :test do
-  gem 'rspec-mocks'
-  gem 'mongoid-rspec'
+  gem 'rspec-mocks', '~> 2.14.0'
+  gem 'mongoid-rspec', '~> 1.9.0'
   gem 'webmock'
 end
 
