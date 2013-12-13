@@ -16,12 +16,7 @@ gem 'coffee-rails', '~> 4.0.0'
 # gem 'therubyracer', platforms: :ruby
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 1.2'
-
-group :doc do
-  # bundle exec rake doc:rails generates the API under doc/api.
-  gem 'sdoc', require: false
-end
+# gem 'jbuilder', '~> 1.2'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
@@ -32,14 +27,16 @@ gem 'unicorn-rails'
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
 
-# Use debugger
-gem 'debugger', group: [:development, :test]
-
 gem 'mongoid', '~> 4', github: 'mongoid/mongoid'
 gem 'bson_ext'
-gem 'pry-rails', :group => :development
+
+group :development do
+  gem 'pry-rails'
+end
 
 group :development, :test do
+  gem 'debugger'
+  gem 'fabrication'
   gem 'rspec-rails', '~> 3.0.0.beta'
 end
 
@@ -51,6 +48,5 @@ end
 
 gem 'haml-rails'
 gem 'rest-client'
-gem 'fabrication'
 gem 'database_cleaner'
 gem 'authority'
