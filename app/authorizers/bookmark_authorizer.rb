@@ -8,6 +8,10 @@ class BookmarkAuthorizer < ApplicationAuthorizer
     resource
   end
 
+  def self.creatable_by?(user)
+    default
+  end
+
   def readable_by?(user)
     bookmark.publicly_visible or
       not bookmark.collaborators.find_by(
