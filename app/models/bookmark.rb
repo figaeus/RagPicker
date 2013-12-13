@@ -10,8 +10,8 @@ class Bookmark
 
   field :url, type: String
   field :visits, type: Integer, default: 0
-  field :publicly_visible, default: false
-  field :publicly_annotable, default: false
+  field :publicly_visible, type: Boolean, default: false
+  field :publicly_annotable, type: Boolean, default: false
 
   validates_presence_of :url, :visits
 
