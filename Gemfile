@@ -45,6 +45,7 @@ end
 
 group :test do
   gem 'rspec-mocks'
+  gem 'mongoid-rspec'
   gem 'webmock'
 end
 

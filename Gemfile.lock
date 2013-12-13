@@ -86,6 +86,10 @@ GEM
     method_source (0.8.2)
     mime-types (1.25.1)
     minitest (4.7.5)
+    mongoid-rspec (1.2.1)
+      bson_ext (>= 1.0.4)
+      mongoid (>= 2.0.0.beta.15)
+      rspec (>= 2.0.0.beta.19)
     moped (2.0.0.beta3)
       bson (~> 2.0.0.rc3)
       optionable (~> 0.1.1)
@@ -121,6 +125,10 @@ GEM
       json (~> 1.4)
     rest-client (1.6.7)
       mime-types (>= 1.16)
+    rspec (3.0.0.beta1)
+      rspec-core (= 3.0.0.beta1)
+      rspec-expectations (= 3.0.0.beta1)
+      rspec-mocks (= 3.0.0.beta1)
     rspec-collection_matchers (0.0.2)
       rspec-expectations (>= 2.99.0.beta1)
     rspec-core (3.0.0.beta1)
@@ -192,6 +200,7 @@ DEPENDENCIES
   haml-rails
   jbuilder (~> 1.2)
   mongoid (~> 4)!
+  mongoid-rspec
   pry-rails
   rails (= 4.0.1)
   rest-client
